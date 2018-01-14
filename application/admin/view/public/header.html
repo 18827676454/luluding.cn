@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--Head-->
+<head>
+    <meta charset="utf-8" />
+    <title>登录页</title>
+
+    <meta name="description" content="login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="__STATIC__/assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="__STATIC__/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="__STATIC__/assets/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__STATIC__/assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="__STATIC__/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="__STATIC__/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+</head>
+
+<script>
+    console.log(readCookie("current-skin"));
+    function createCookie(n, t, i) {
+        var r, u;
+        i ? (r = new Date, r.setTime(r.getTime() + i * 864e5), u = "; expires=" + r.toGMTString()) : u = "";
+        document.cookie = n + "=" + t + u + "; path=/"
+    }
+    function readCookie(n) {
+        for (var t, r = n + "=", u = document.cookie.split(";"), i = 0; i < u.length; i++) {
+            for (t = u[i]; t.charAt(0) == " ";)t = t.substring(1, t.length);
+            if (t.indexOf(r) == 0)return t.substring(r.length, t.length)
+        }
+        return null
+    }
+    function eraseCookie(n) {
+        createCookie(n, "", -1)
+    }
+    function getInternetExplorerVersion() {
+        var n = -1, t, i;
+        return navigator.appName == "Microsoft Internet Explorer" && (t = navigator.userAgent, i = new RegExp("MSIE ([0-9]{1,}[.0-9]{0,})"), i.exec(t) != null && (n = parseFloat(RegExp.$1))), n
+    }
+    var a;
+    var str;
+    if( str = readCookie("current-skin")){
+console.log(str);
+        a = document.createElement("link"), a.href = "__STATIC__/"+str, a.rel = "stylesheet", document.getElementsByTagName("head")[0].appendChild(a);
+    }
+
+    console.log(a);
+    location.pathname != "/index-rtl-fa.html" && location.pathname != "/index-rtl-ar.html" && (readCookie("rtl-support") ? (document.getElementById("beyond-link") != null && document.getElementById("beyond-link").setAttribute("href", "__STATIC__/assets/css/beyond-rtl.min.css"), document.getElementById("bootstrap-rtl-link") != null && document.getElementById("bootstrap-rtl-link").setAttribute("href", "__STATIC__/assets/css/bootstrap-rtl.min.css"), getInternetExplorerVersion() <= 9 && getInternetExplorerVersion() > 0 && (a = document.createElement("link"), a.href = "__STATIC__/assets/css/4095-rtl.min.css", a.rel = "stylesheet", document.getElementsByTagName("head")[0].appendChild(a))) : (document.getElementById("beyond-link") != null && document.getElementById("beyond-link").setAttribute("href", "__STATIC__/assets/css/beyond.min.css"), document.getElementById("bootstrap-rtl-link") != null && document.getElementById("bootstrap-rtl-link").setAttribute("href", ""), getInternetExplorerVersion() <= 9 && getInternetExplorerVersion() > 0 && (a = document.createElement("link"), a.href = "__STATIC__/assets/css/4095.min.css", a.rel = "stylesheet", document.getElementsByTagName("head")[0].appendChild(a))));
+    /*
+     //# sourceMappingURL=skins.min.js.map
+     */
+</script>
+<!--Head Ends-->
+<!--Body-->
